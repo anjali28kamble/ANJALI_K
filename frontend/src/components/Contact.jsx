@@ -22,7 +22,9 @@ export default function Contact() {
     }
     setLoading(true);
     try {
-      const res = await axios.post('/api/contact', form);
+  const API_URL = "https://anjali-k.onrender.com";
+  const res = await axios.post(`${API_URL}/api/contact`, form);
+
       if (res.data.success) {
         toast.success(res.data.message, { duration: 5000 });
         setForm(initialForm);
